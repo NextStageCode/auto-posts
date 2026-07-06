@@ -1,10 +1,11 @@
-
-   [
-     {
-       "file": "videos/teste.mp4",
-       "caption": "Dia de praia ☀️ #verao",
-       "platforms": ["instagram"],
-       "datetime": "2026-07-06T15:30:00-03:00",
-       "posted": false
-     }
-   ]
+[
+  {
+    "file": "videos/teste.mp4",
+    "caption": "Dia de praia ☀️ #verao",
+    "platforms": [
+      "instagram"
+    ],
+    "datetime": "2026-07-06T15:30:00-03:00",
+    "posted": true
+  }
+]
