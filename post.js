@@ -19,7 +19,7 @@ async function publicarInstagram(videoUrl, caption) {
 
   if (!create.id) {
     console.error("Erro ao criar o container:", create);
-    return;
+    return false;
   }
   const creationId = create.id;
 
@@ -36,7 +36,7 @@ async function publicarInstagram(videoUrl, caption) {
 
   if (status !== "FINISHED") {
     console.error("Processamento falhou, status final:", status);
-    return;
+    return false;
   }
 
   // 3. publica de fato
@@ -47,6 +47,7 @@ async function publicarInstagram(videoUrl, caption) {
   }).then((r) => r.json());
 
   console.log("Publicado:", publish);
+  return !!publish.id;
 }
 
 async function main() {
@@ -60,12 +61,21 @@ async function main() {
 
     // O repositório (ou a pasta /videos) precisa ser PÚBLICO
     // para o Instagram conseguir baixar o arquivo por essa URL.
-    const videoUrl = `https://raw.githubusercontent.com/nextstagecode/auto-posts/main/${post.file}`;
+    // encodeURI trata espaços/acentos/emojis no nome do arquivo,
+    // mas o ideal é evitar esses caracteres no nome do arquivo em si.
+    const videoUrl = encodeURI(
+      `https://raw.githubusercontent.com/nextstagecode/auto-posts/main/${post.file}`
+    );
 
     console.log("Publicando:", post.file);
-    await publicarInstagram(videoUrl, post.caption);
+    const sucesso = await publicarInstagram(videoUrl, post.caption);
 
-    post.posted = true;
+    if (sucesso) {
+      post.posted = true;
+      console.log("✅ Marcado como publicado:", post.file);
+    } else {
+      console.error("❌ Falhou, mantendo posted=false para tentar de novo:", post.file);
+    }
   }
 
   fs.writeFileSync("schedule.json", JSON.stringify(schedule, null, 2));
