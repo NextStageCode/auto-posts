@@ -1,5 +1,8 @@
 {
   "name": "auto-posts",
   "version": "1.0.0",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "libsodium-wrappers": "^0.7.13"
+  }
 }

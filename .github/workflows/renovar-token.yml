@@ -1,0 +1,20 @@
+name: Renovar token do Instagram
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # toda segunda-feira às 6h (UTC)
+  workflow_dispatch:
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: node renovar-token.js
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          ADMIN_PAT: ${{ secrets.ADMIN_PAT }}
