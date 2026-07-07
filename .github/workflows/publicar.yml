@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "*/30 * * * *"   # a cada 30 minutos
   workflow_dispatch:          # permite rodar manualmente também
+  repository_dispatch:
+    types: [publicar-agora]
 
 jobs:
   publicar:
