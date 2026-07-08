@@ -13,7 +13,11 @@ const path = require("path");
 // ==== CONFIGURAÇÕES — ajuste aqui ====
 const PASTA_VIDEOS = "./videos";
 const POSTS_POR_DIA = 5;              // quantos posts por dia (máx recomendado: 20, limite da API é 25)
+<<<<<<< HEAD
 const HORARIOS = ["08:00", "11:00", "12:30", "18:30", "21:00"]; // um horário pra cada post do dia (mesmo tamanho de POSTS_POR_DIA) coloquei 5 minutos antes do cronjob para ter certeza que vai funcionar
+=======
+const HORARIOS = ["08:00", "11:30", "15:00", "18:00", "21:00"]; // um horário pra cada post do dia (mesmo tamanho de POSTS_POR_DIA)
+>>>>>>> 38428be70e9d3169dd8f6c11615a537220e58c16
 const DATA_INICIO = "2026-07-07";     // primeiro dia de postagem (AAAA-MM-DD)
 const FUSO = "-03:00";                // horário de Brasília
 const LEGENDA_PADRAO = `Siga para não perder os melhores memes da semana! 😂👇
