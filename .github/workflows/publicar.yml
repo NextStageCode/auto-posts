@@ -2,9 +2,9 @@ name: Publicar posts agendados
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # a cada 30 minutos
+    - cron: "*/30 * * * *"   # a cada 30 minutos (mantém como reserva, mesmo com atraso)
   workflow_dispatch:          # permite rodar manualmente também
-  repository_dispatch:
+  repository_dispatch:        # permite ser "acordado" por um serviço externo (cron-job.org)
     types: [publicar-agora]
 
 jobs:
@@ -20,6 +20,7 @@ jobs:
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Salvar schedule.json atualizado
         run: |

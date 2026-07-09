@@ -54,7 +54,7 @@ arquivos.forEach((arquivo, i) => {
   agenda.push({
     file: `videos/${arquivo}`,
     caption: LEGENDA_PADRAO,
-    platforms: ["instagram"],
+    platforms: ["instagram", "tiktok"],
     datetime,
     posted: false,
   });

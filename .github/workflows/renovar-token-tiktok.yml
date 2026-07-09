@@ -1,0 +1,22 @@
+name: Renovar token do TikTok
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # todos os dias às 6h (UTC)
+  workflow_dispatch:
+
+jobs:
+  renovar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: node renovar-token-tiktok.js
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          ADMIN_PAT: ${{ secrets.ADMIN_PAT }}
