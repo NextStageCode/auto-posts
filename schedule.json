@@ -1,12 +1,20 @@
 [
   {
+<<<<<<< HEAD
     "file": "videos/Meme_1.mp4",
+=======
+    "file": "videos/Meme_001.mp4",
+>>>>>>> 08e56ddcfe382f3196dc9b673b720405e8ff9b6b
     "caption": "Siga para não perder os melhores memes da semana! 😂👇\n  👉 @tiozaodapiada\n  👉 @tiozaodapiada\n  👉 @tiozaodapiada\n\nO melhor feed de humor para o seu dia. Ative as notificações! 🔔\n\n💡 Gostou?\n💬 Deixe seu comentário\n✈️ Compartilhe com um amigo que precisa rir disso\n📌 Salve para ver mais tarde\n\n\n\n#memes #memesbr #engracado #humor #comedia #explorar #reels #zueira #rindomuito #resenha #videoengracado #memestagram",
     "platforms": [
       "instagram",
       "tiktok"
     ],
+<<<<<<< HEAD
     "datetime": "2026-07-09T07:00:00-03:00",
+=======
+    "datetime": "2026-07-09T07:25:00-03:00",
+>>>>>>> 08e56ddcfe382f3196dc9b673b720405e8ff9b6b
     "posted": false
   },
   {
@@ -76,7 +84,11 @@
       "instagram",
       "tiktok"
     ],
+<<<<<<< HEAD
     "datetime": "2026-07-08T12:30:00-03:00",
+=======
+    "datetime": "2026-07-08T12:00:00-03:00",
+>>>>>>> 08e56ddcfe382f3196dc9b673b720405e8ff9b6b
     "posted": true
   },
   {
@@ -87,6 +99,7 @@
       "tiktok"
     ],
     "datetime": "2026-07-09T19:30:00-03:00",
+<<<<<<< HEAD
     "posted": false
   },
   {
@@ -96,6 +109,8 @@
       "tiktok"
     ],
     "datetime": "2026-07-08T21:00:00-03:00",
+=======
+>>>>>>> 08e56ddcfe382f3196dc9b673b720405e8ff9b6b
     "posted": false
   },
   {
