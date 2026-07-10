@@ -28,4 +28,5 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add schedule.json
           git diff --staged --quiet || git commit -m "post publicado automaticamente"
+          git pull --rebase origin main 
           git push
