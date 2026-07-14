@@ -33,10 +33,12 @@ O melhor feed de humor para o seu dia. Ative as notificações! 🔔
 #memes #memesbr #engracado #humor #comedia #explorar #reels #zueira #rindomuito #resenha #videoengracado #memestagram`; // legenda usada se não houver uma personalizada
 // =======================================
 
+
 const arquivos = fs
   .readdirSync(PASTA_VIDEOS)
   .filter((f) => f.toLowerCase().endsWith(".mp4"))
-  .sort(); // ordem alfabética — renomeie os arquivos tipo 01.mp4, 02.mp4 se quiser controlar a ordem
+  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true })) // ordenação natural: 1.mp4, 2.mp4, 10.mp4...
+  .reverse(); // inverte: último arquivo será o primeiro a ser agendado
 
 const agenda = [];
 let dia = new Date(DATA_INICIO + "T00:00:00" + FUSO);
