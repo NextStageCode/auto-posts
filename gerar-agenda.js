@@ -14,7 +14,7 @@ const path = require("path");
 const PASTA_VIDEOS = "./videos";
 const POSTS_POR_DIA = 5;              // quantos posts por dia (máx recomendado: 20, limite da API é 25)
 const HORARIOS = ["08:00", "11:00", "12:30", "18:30", "21:00"]; // um horário pra cada post do dia (mesmo tamanho de POSTS_POR_DIA) coloquei 5 minutos antes do cronjob para ter certeza que vai funcionar
-const DATA_INICIO = "2026-07-07";     // primeiro dia de postagem (AAAA-MM-DD)
+const DATA_INICIO = "2026-07-14";     // primeiro dia de postagem (AAAA-MM-DD)
 const FUSO = "-03:00";                // horário de Brasília
 const LEGENDA_PADRAO = `Siga para não perder os melhores memes da semana! 😂👇
   👉 @tiozaodapiada
